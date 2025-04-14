@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>体重记录 - Leland Health</title>
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        .tracker-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .tracker-container h2 {
+            color: #3E7BFA;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .chart-container {
+            margin: 2rem 0;
+            height: 400px;
+        }
+    </style>
+</head>
+<body class="requires-login">
+    <header>
+        <div class="container">
+            <h1>Leland Health</h1>
+            <p>您的个人减重助手</p>
+            <nav>
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="dashboard.html">我的仪表板</a></li>
+                    <li><a href="about.html">关于我们</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="tracker-container">
+            <h2>体重记录</h2>
+            
+            <!-- 这里将插入Google Forms嵌入代码 -->
+            <div id="weight-form">
+                <p>表单加载中...</p>
+            </div>
+            
+            <div class="chart-container">
+                <h3>体重趋势</h3>
+                <!-- 这里将插入Google Charts图表 -->
+                <div id="weight-chart">
+                    <p>图表加载中...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Leland Health. 保留所有权利。</p>
+        </div>
+    </footer>
+    
+    <script src="js/main.js"></script>
+    <script>
+        // 检查用户ID，如果不存在则重定向到注册页面
+        document.addEventListener('DOMContentLoaded', function() {
+            const userId = localStorage.getItem('lelandHealthUserId');
+            
+            if (!userId) {
+                window.location.href = 'register.html';
+            }
+        });
+    </script>
+</body>
+</html>
