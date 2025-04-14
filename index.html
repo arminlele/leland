@@ -69,5 +69,25 @@
     </footer>
     
     <script src="js/main.js"></script>
+<script>
+// 简化的用户系统
+document.addEventListener('DOMContentLoaded', function() {
+  // 从URL获取用户ID
+  const urlParams = new URLSearchParams(window.location.search);
+  const userId = urlParams.get('userId') || localStorage.getItem('lelandHealthUserId');
+  
+  // 如果有用户ID，保存到本地存储
+  if (userId) {
+    localStorage.setItem('lelandHealthUserId', userId);
+    console.log('用户ID: ' + userId);
+  }
+  
+  // 显示用户ID（如果页面上有显示区域）
+  const userIdDisplay = document.getElementById('user-id-display');
+  if (userIdDisplay && userId) {
+    userIdDisplay.textContent = userId;
+  }
+});
+</script>
 </body>
 </html>
